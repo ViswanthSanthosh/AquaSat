@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-08-22T05:00:34Z" name="Default suite" finished-at="2022-08-22T05:01:01Z" duration-ms="27351">
+    <groups>
+    </groups>
+    <test started-at="2022-08-22T05:00:34Z" name="Default test" finished-at="2022-08-22T05:01:01Z" duration-ms="27351">
+      <class name="com.aqua.testcases.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.aqua.testcases.LoginTest@add0edd]" started-at="2022-08-22T05:00:34Z" name="setup" finished-at="2022-08-22T05:00:50Z" duration-ms="15941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginPageTest()[pri:0, instance:com.aqua.testcases.LoginTest@add0edd]" started-at="2022-08-22T05:00:50Z" name="loginPageTest" finished-at="2022-08-22T05:01:01Z" duration-ms="11389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.aqua.testcases.LoginTest@add0edd]" started-at="2022-08-22T05:01:01Z" name="tearDown" finished-at="2022-08-22T05:01:01Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.aqua.testcases.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
