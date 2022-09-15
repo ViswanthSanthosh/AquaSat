@@ -8,7 +8,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      macenProfile:
+      mavenProfile:
         description: 'web or android or IOS'
         required: true
         default: 'web'
@@ -35,6 +35,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run:
+            mvn clean test -P${{ github.event.inputs.mavenProfile }} -DremoteURL=${{ ithub.event.inputs.remoteURL }}
+  
+  
