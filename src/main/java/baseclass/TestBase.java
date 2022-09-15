@@ -2,6 +2,8 @@ package baseclass;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import util.TestUtil;
 
 public class TestBase {
@@ -26,16 +30,25 @@ public class TestBase {
 
 	public static void initialization() {
 		String browsername = prop.getProperty("browser");
-		if (browsername.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					"src/main/java/util/driver/chromedriver.exe");
 
-			driver = new ChromeDriver();
-		} else if (browsername.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver",
-					"src/main/java/util/driver/geckodriver.exe");
-			driver = new FirefoxDriver();
-			}
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("browserName",browsername);
+		try {
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
+		} catch (MalformedURLException e) {
+			throw new RuntimeException(e);
+		}
+
+//		if (browsername.equals("chrome")) {
+//			System.setProperty("webdriver.chrome.driver",
+//					"src/main/java/util/driver/chromedriver.exe");
+//
+//			driver = new ChromeDriver();
+//		} else if (browsername.equals("firefox")) {
+//			System.setProperty("webdriver.gecko.driver",
+//					"src/main/java/util/driver/geckodriver.exe");
+//			driver = new FirefoxDriver();
+//			}
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_Load_Timeout, TimeUnit.SECONDS);
