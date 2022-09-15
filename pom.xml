@@ -9,6 +9,10 @@
 	<profiles>
 		<profile>
 			<id>web</id>
+			<properties>
+				<maven.compiler.source>6</maven.compiler.source>
+				<maven.compiler.target>1.6</maven.compiler.target>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
