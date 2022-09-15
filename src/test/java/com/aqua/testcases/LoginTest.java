@@ -8,8 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.aqua.baseclass.TestBase;
-import com.aquasat.pages.LoginPage;
+import baseclass.TestBase;
+import pages.LoginPage;
 
 public class LoginTest extends TestBase {
 	LoginPage login;

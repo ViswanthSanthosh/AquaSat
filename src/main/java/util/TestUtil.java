@@ -1,4 +1,4 @@
-package com.aqua.util;
+package util;
 
 public class TestUtil {
 	
