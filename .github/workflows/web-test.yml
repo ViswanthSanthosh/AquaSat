@@ -23,9 +23,8 @@ jobs:
     name: first-web-test
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Start Selenoid Server
         uses: Xotabu4/selenoid-github-action@v2
         id: start-selenoid
@@ -39,9 +38,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
 
-      - name: run
+      - name: Run the Tests
         run:
-            mvn clean test -Pweb
+            mvn clean test -P${{ github.event.inputs.mavenProfile }} -DremoteURL=${{ github.event.inputs.remoteURL }}
 
 
       # Runs a single command using the runners shell
