@@ -33,6 +33,7 @@ public class LoginTest extends TestBase {
 		login.enterPassword(prop.getProperty("password"));
 		login.clickLoginButton();
 		Thread.sleep(9000);
+
 	}
 	@AfterMethod
 	public void tearDown() {

@@ -33,6 +33,10 @@ public class TestBase {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("browserName",browsername);
+		capabilities.setCapability("enableVNC", true);
+		capabilities.setCapability("enableVideo",true);
+		capabilities.setCapability("enableLog",true);
+		capabilities.setCapability("videoName","test1_video.mp4");
 		try {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
 		} catch (MalformedURLException e) {
