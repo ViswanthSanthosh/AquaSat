@@ -38,7 +38,7 @@ public class TestBase {
 		capabilities.setCapability("enableLog",true);
 		capabilities.setCapability("videoName","test1_video.mp4");
 		try {
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
+			driver = new RemoteWebDriver(new URL("http://34.147.118.153:4444/wd/hub"),capabilities);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
