@@ -15,7 +15,7 @@ on:
       remoteURL: 
         description: 'Selenoid URL if hosted outside'
         required: true
-        default: 'http://localhost:4444/wd/hub'
+        default: 'http://34.147.118.153:4444/wd/hub'
         
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
